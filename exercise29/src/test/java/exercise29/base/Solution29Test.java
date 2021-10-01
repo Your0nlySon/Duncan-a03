@@ -11,8 +11,8 @@ class Solution29Test {
 
         int userI = 10;
 
-        Double actual_validateUserInputTrue = userInput;
-        Double expected_validateUserInputTrue = true;
+        Double actual_validateUserInputTrue = sol.calc72(userI);
+        Double expected_validateUserInputTrue = 7.0;
 
         assertEquals(expected_validateUserInputTrue, actual_validateUserInputTrue);
 
