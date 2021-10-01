@@ -5,6 +5,7 @@ package exercise26.base;
     Copyright 2021 Ethan Duncan
  */
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Solution26 {
@@ -14,27 +15,21 @@ public class Solution26 {
     public static void main(String[] args) {
         Solution26 sol = new Solution26();
 
-        //call method 'Balance'
-        PaymentCalculator Balance = sol.readGetBalanceFromUser();
-        //call method 'APR'
-        PaymentCalculator APR = sol.readAPRFromUser();
-        //call method 'MonthlyPayment'
-        PaymentCalculator MonthlyPayment = sol.readMonthlyPaymentFromUser();
+        //call method 'input'
+        PaymentCalculator input = sol.readInputFromUser();
 
     }
 
-    private PaymentCalculator readGetBalanceFromUser() {
+    private PaymentCalculator readInputFromUser() {
         //ask user for input about get balance, parse, and return it
-        return null;
+        System.out.println("What is your balance? ");
+        double balance = Double.parseDouble(in.nextLine());
+        System.out.println("What is the APR on the card (as a percent)? ");
+        double apr = Integer.parseInt(in.nextLine());
+        apr = apr/365;
+        System.out.println("What is the monthly payment you can make? ");
+        double monthlyPayment = Double.parseDouble(in.nextLine());
+        return new PaymentCalculator(balance, apr, monthlyPayment);
     }
 
-    private PaymentCalculator readAPRFromUser() {
-        //ask user for input about APR as a percentage, parse, and return it
-        return null;
-    }
-
-    private PaymentCalculator readMonthlyPaymentFromUser() {
-        //ask user for amount they are going to pay monthly, parse, and return it
-        return null;
-    }
 }
