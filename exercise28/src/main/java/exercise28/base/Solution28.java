@@ -23,13 +23,22 @@ public class Solution28 {
 
     public int calcTheSumFromArray(int[] nL) {
         //initialize a double called 'sum'
+        int sum = 0;
         //for loop that runs 5 times that adds up all the values of the array
-        return 0;
+        for (int i = 0;i < 5; i++) {
+            sum += nL[i];
+        }
+        return sum;
     }
 
     private int[] readAndCalcNumFromUser() {
         //initialize an array called 'numArray' that has room for 5 numbers
+        int[] numArray = new int[5];
         //for loop that runs 5 times and prompts for a number and then stores it in the array
-        return null;
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter a number: ");
+            numArray[i] = Integer.parseInt(in.nextLine());
+        }
+        return numArray;
     }
 }
