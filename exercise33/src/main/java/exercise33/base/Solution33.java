@@ -25,11 +25,18 @@ public class Solution33 {
 
     private String readUserQuestion() {
         //ask user for question and return it
+        System.out.println("What's your question? ");
+        return in.nextLine();
     }
 
     private void choose8Ball() {
         //create an array called 'responses'
+        String[] responses = {"Yes", "No", "Maybe", "Ask again later"};
         //get a random number
+        Random rand = new Random();
+        int upperbound = 4;
+        int int_random = rand.nextInt(upperbound);
         //print the 'responses' but chosen by the random number
+        System.out.println(responses[int_random]);
     }
 }
