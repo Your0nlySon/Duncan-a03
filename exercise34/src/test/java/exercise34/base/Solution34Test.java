@@ -5,14 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Solution34Test {
+    //if you run the program it will work but the test is not working for some reason
+
     @Test
     public void test_nameRemove() {
         Solution34 sol = new Solution34();
 
         String userName = new String("John Smith");
 
-        String actual_nameRemove = sol.deleteEmployee(userName);
-        String expected_nameRemove = "John Smith";
+        String[] employeeArray = {"John Smith", "Jackie Jackson", "Chris Jones", "Amanda Cullen","Jeremy Goodwin"};
+        String[] actual_nameRemove = sol.deleteEmployee(userName, employeeArray);
+        String[] expected_nameRemove = {"Jackie Jackson", "Chris Jones", "Amanda Cullen","Jeremy Goodwin"};
 
         assertEquals(expected_nameRemove, actual_nameRemove);
     }
@@ -23,10 +26,11 @@ class Solution34Test {
 
         String badUser = new String("Jake Smith");
 
-        String acutal_doesntRemove = sol.deleteEmployee(badUser);
-        String expected_nameRemove = "This employee was not apart of the list. Nobody was removed.";
+        String[] employeeArray = {"John Smith", "Jackie Jackson", "Chris Jones", "Amanda Cullen","Jeremy Goodwin"};
+        String[] actual_doesntRemove = sol.deleteEmployee(badUser, employeeArray);
+        String expected_nameRemove = null;
 
-        assertEquals(expected_nameRemove, acutal_doesntRemove);
+        assertEquals(expected_nameRemove, actual_doesntRemove);
     }
 
 
