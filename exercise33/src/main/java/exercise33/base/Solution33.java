@@ -5,7 +5,6 @@ package exercise33.base;
     Copyright 2021 Ethan Duncan
  */
 
-import java.sql.Array;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -29,14 +28,19 @@ public class Solution33 {
         return in.nextLine();
     }
 
+
     private void choose8Ball() {
         //create an array called 'responses'
         String[] responses = {"Yes", "No", "Maybe", "Ask again later"};
-        //get a random number
+        //print the 'responses' but chosen by the random number
+        System.out.println(responses[randNumber()]);
+    }
+
+    public int randNumber() {
         Random rand = new Random();
         int upperbound = 4;
         int int_random = rand.nextInt(upperbound);
-        //print the 'responses' but chosen by the random number
-        System.out.println(responses[int_random]);
+
+        return  int_random;
     }
 }
