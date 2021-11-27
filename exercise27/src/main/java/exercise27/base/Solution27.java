@@ -23,6 +23,8 @@ public class Solution27 {
         String eID = sol.readEIDFromUser();
         //call method 'validateInput'
         String validateInput = sol.validateUserInputs(firstName, secondName, zipCode, eID);
+
+        System.out.println(validateInput);
     }
 
     private String readFirstNameFromUser() {
@@ -95,7 +97,7 @@ public class Solution27 {
         }
         //else state that employee ID must be in that format
         else {
-            eID = "The employee ID must be in the format of AA-1234";
+            eID = "\nThe employee ID must be in the format of AA-1234";
         }
         //if the zipcode is 5 letters
         if(zC.matches("^[0-9]*$") && (zC.length() == 5)) {
@@ -104,9 +106,9 @@ public class Solution27 {
         }
         //else state that the zipcode must be a 5 digit number.
         else {
-            zCode = "The zipcode must be a 5 digit number";
+            zCode = "\nThe zipcode must be a 5 digit number";
         }
-        if ((fNameB = true) && (fName2B = true) && (sNameB = true) && (sName2B = true) && (zCodeB = true) && (eIDB = true)) {
+        if ((fNameB == true) && (fName2B == true) && (sNameB == true) && (sName2B == true) && (zCodeB == true) && (eIDB == true)) {
             finalString = "There were no errors found.";
         }
         else {
