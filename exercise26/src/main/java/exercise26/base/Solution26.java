@@ -11,25 +11,32 @@ import java.util.Scanner;
 public class Solution26 {
 
     private static final Scanner in = new Scanner(System.in);
+    PaymentCalculator pC = new PaymentCalculator();
 
     public static void main(String[] args) {
         Solution26 sol = new Solution26();
 
         //call method 'input'
-        PaymentCalculator input = sol.readInputFromUser();
+        sol.readInputFromUser();
 
     }
 
-    private PaymentCalculator readInputFromUser() {
-        //ask user for input about get balance, parse, and return it
-        System.out.println("What is your balance? ");
-        double balance = Double.parseDouble(in.nextLine());
-        System.out.println("What is the APR on the card (as a percent)? ");
-        double apr = Integer.parseInt(in.nextLine());
-        apr = apr/365;
-        System.out.println("What is the monthly payment you can make? ");
-        double monthlyPayment = Double.parseDouble(in.nextLine());
-        return new PaymentCalculator(balance, apr, monthlyPayment);
+    private void readInputFromUser() {
+
+        double Balance, APR, MonthlyPayment;
+
+        System.out.print("What is your balance? ");
+        Balance = in.nextDouble();
+
+        System.out.print("What is the APR on the card (as a percent)? ");
+        APR = in.nextDouble();
+        APR = APR / 100;
+
+        System.out.print("What is the monthly payment you can make? ");
+        MonthlyPayment = in.nextDouble();
+
+        int months = pC.PaymentCalculator(Balance, APR, MonthlyPayment);
+        System.out.println("It will take " + months + " months to pay off this card.");
     }
 
 }
