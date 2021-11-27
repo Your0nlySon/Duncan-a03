@@ -24,6 +24,8 @@ public class Solution36 {
         Double min = sol.calcMin(askNum);
         //call method 'std'
         String std = sol.calcSTD(askNum, average);
+
+        System.out.println("The average is " + average + "\nThe minimum is " + min + "\nThe maximum is " + max + "\nThe standard deviation is " + std);
     }
 
     private ArrayList<Double> readAskNumFromUser() {
@@ -47,7 +49,7 @@ public class Solution36 {
             else {
                 System.out.print("Invalid input. Please input a number");
             }
-        } while (d == 1);
+        } while (d == 0);
         return askNum;
     }
 
