@@ -33,12 +33,12 @@ public class Solution31 {
 
             if (age.matches("^[0-9]*$")) {
                 parsedAge = Integer.parseInt(age);
-                break;
+                value = true;
             }
             else {
-                System.out.print("Invalid input. Please input an int.");
+                System.out.print("\nInvalid input. Please input an int.");
             }
-        } while (value = false);
+        } while (value == false);
         return parsedAge;
     }
 
@@ -54,25 +54,25 @@ public class Solution31 {
 
             if (pulse.matches("^[0-9]*$")) {
                 parsedPulse = Integer.parseInt(pulse);
-                break;
+                value = true;
             }
             else {
-                System.out.print("Invalid input. Please input an int.");
+                System.out.print("\nInvalid input. Please input an int.");
             }
-        } while (value = true);
+        } while (value == true);
         return parsedPulse;
     }
 
     private void createTableOfRates(int uA, int uRP) {
 
-        System.out.format("Resting Pulse: " + uRP + "        Age: " + uA);
+        System.out.format("Resting Pulse: " + uRP + "\tAge: " + uA);
         System.out.format("\nIntensity    | Rate");
         System.out.format("\n-------------|--------\n");
         int targetHeartRate;
        //Create for loop that increases by 5 from 55 to 95
        //Format Intensity%          | Rate BPM
        for (double i = 55; i <= 95; i += 5) {
-           System.out.format("%.0f          | %.0f bpm\n",i,(((220 - uA) - uRP) * (i/100)) + uRP);
+           System.out.format("%.0f\t| %.0f bpm\n",i,(((220 - uA) - uRP) * (i/100)) + uRP);
        }
     }
 }
