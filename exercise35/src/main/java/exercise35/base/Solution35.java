@@ -41,7 +41,7 @@ public class Solution35 {
         return nameArr;
     }
 
-    private String pickRandWin(ArrayList<String> nameArray) {
+    public String pickRandWin(ArrayList<String> nameArray) {
         //get a random value that has an upper value of the string length
         Random rand = new Random();
         int upperbound = nameArray.size();
