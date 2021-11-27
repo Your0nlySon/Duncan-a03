@@ -5,7 +5,6 @@ package exercise28.base;
     Copyright 2021 Ethan Duncan
  */
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Solution28 {
@@ -19,6 +18,8 @@ public class Solution28 {
         int[] numLoop = sol.readAndCalcNumFromUser();
         //call method 'calcLoop'
         int calcLoop = sol.calcTheSumFromArray(numLoop);
+
+        System.out.println(calcLoop);
     }
 
     public int calcTheSumFromArray(int[] nL) {
