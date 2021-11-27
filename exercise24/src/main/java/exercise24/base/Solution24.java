@@ -6,7 +6,6 @@ package exercise24.base;
  */
 
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Solution24 {
@@ -24,7 +23,7 @@ public class Solution24 {
         Boolean isAnagram = sol.seeIfItIsAnagram(firstString, secondString);
 
         //if isAnagram is true then print 'firstSting and secondString are anagrams'
-        if (isAnagram = true) {
+        if (isAnagram) {
             System.out.println(firstString + " and " + secondString + " are anagrams");
         }
         //else print 'firstString and secondString are not anagrams'
@@ -35,8 +34,8 @@ public class Solution24 {
 
     public Boolean seeIfItIsAnagram(String fS, String sS) {
         //create two new strings
-        String s1 = fS.replaceAll("//s", "");
-        String s2 = sS.replaceAll("//s", "");
+        String s1 = fS.replace("//s", "");
+        String s2 = sS.replace("//s", "");
         // create an if else based on if the strings are similar in length
         if (s1.length() != s2.length()) {
             //if they aren't similar return false
