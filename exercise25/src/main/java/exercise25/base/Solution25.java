@@ -16,14 +16,33 @@ public class Solution25 {
         //call method 'userPassword'
         String userPassword = sol.readUserPasswordFromUser();
         //call method 'passwordValidator'
-        int passwordValidator = sol.seeIfPasswordIsStrong(userPassword);
-        //call method 'passwordSwitch'
-        String passwordSwitch = sol.printTheStrengthOfPassword(passwordValidator, userPassword);
+        String passwordSwitch = sol.passwordValidator(userPassword, userPassword);
     }
 
-    private String printTheStrengthOfPassword(int passwordValidator, String password) {
+    private String passwordValidator (String uP, String password) {
+        int i;
+
+        if (uP.matches("[0-9]+") && (uP.length() <= 8)) {
+            i = 1;
+        }
+        //else if password is all letter and is fever than 8 return 2
+        else if (uP.matches("[a-zA-Z]+") && (uP.length() <= 8)) {
+            i = 2;
+        }
+        //else if password contains letters and at least one number and is at least 8 return 3
+        else if (uP.matches("(([a-zA-Z].*[0-9])|([0-9].*[a-zA-Z]))") && (uP.length() >= 8)) {
+            i = 3;
+        }
+        //else if password contains letters, numbers, and special characters and is at least 8 return 4
+        else if (uP.matches("[a-zA-Z0-9-+_!@#$%^&*., ?]+") && (uP.length() >= 8)) {
+            i = 4;
+        }
+        //else return 0
+        else {
+            i = 0;
+        }
         //Switch statement
-        switch (passwordValidator) {
+        switch (i) {
             //Case 0 = The password 'password' is of unknown strength.
             case 0: System.out.println("The password " + password + " is of unknown strength");
             break;
@@ -48,28 +67,5 @@ public class Solution25 {
         System.out.println("Enter Password: ");
         String pass = in.nextLine();
         return pass;
-    }
-
-    public int seeIfPasswordIsStrong(String uP) {
-        //if password is all numbers and less than 8 return 1
-        if (uP.matches("[0-9]+") && (uP.length() <= 8)) {
-            return 1;
-        }
-        //else if password is all letter and is fever than 8 return 2
-        else if (uP.matches("[a-zA-Z]+") && (uP.length() <= 8)) {
-            return 2;
-        }
-        //else if password contains letters and at least one number and is at least 8 return 3
-        else if (uP.matches("(([a-zA-Z].*[0-9])|([0-9].*[a-zA-Z]))") && (uP.length() >= 8)) {
-            return 3;
-        }
-        //else if password contains letters, numbers, and special characters and is at least 8 return 4
-        else if (uP.matches("[a-zA-Z0-9-+_!@#$%^&*., ?]+") && (uP.length() >= 8)) {
-            return 4;
-        }
-        //else return 0
-        else {
-            return 0;
-        }
     }
 }
