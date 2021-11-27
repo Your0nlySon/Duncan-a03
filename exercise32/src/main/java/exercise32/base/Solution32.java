@@ -40,16 +40,16 @@ public class Solution32 {
 
             if (userInput.matches("1") || userInput.matches("2") || userInput.matches("3")) {
                 diffLevel = Integer.parseInt(userInput);
-                break;
+                valid = true;
             }
             else {
                 System.out.println("Invalid input. Try again");
             }
-        } while (valid = false);
+        } while (valid == false);
         return diffLevel;
     }
 
-    private int getRandNum(int askUser) {
+    public int getRandNum(int askUser) {
         int guessedNum = 0;
         //Through 'askUser' through if elseif it will find a random number
         if (askUser == 1) {
@@ -91,7 +91,7 @@ public class Solution32 {
                     System.out.println("Invalid input. Please try again");
                     valid = false;
                 }
-            } while (valid = false);
+            } while (valid == false);
 
             //if and else if the guess is greater than, less than, or equal to
             if (guess == getRandNum) {
